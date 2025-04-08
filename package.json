@@ -1,0 +1,45 @@
+{
+  "name": "vue-web-extension",
+  "version": "1.0.0",
+  "description": "A browser extension built with Vue.js, TypeScript, and Tailwind CSS",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "watch": "vite build --watch",
+    "dev:extension": "vite build --watch --mode development",
+    "dev:chrome": "concurrently \"npm run dev:extension\" \"node scripts/simple-extension-reloader.js\"",
+    "reload": "node scripts/simple-extension-reloader.js",
+    "type-check": "vue-tsc --noEmit",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
+  },
+  "dependencies": {
+    "pinia": "^2.3.1",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.251",
+    "@types/node": "^20.17.30",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "@vitejs/plugin-vue": "^4.6.2",
+    "autoprefixer": "^10.4.21",
+    "chalk": "^4.1.2",
+    "chokidar": "^3.6.0",
+    "concurrently": "^8.2.2",
+    "esbuild": "^0.19.12",
+    "esbuild-register": "^3.6.0",
+    "eslint": "^8.57.1",
+    "eslint-plugin-vue": "^9.33.0",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.8.3",
+    "vite": "^4.5.12",
+    "vite-plugin-web-extension": "^3.2.0",
+    "vue-tsc": "^1.8.27",
+    "webextension-polyfill": "^0.10.0"
+  }
+}
